@@ -17,9 +17,16 @@ datasource db {
 model User {
   id        Int        @id @default(autoincrement())
   email     String     @unique
-  name      String?
+  password  String
+  name      String
   role      Role       @default(DESIGNER)
   templates Template[]
+}
+
+enum Role {
+  ADMIN
+  DESIGNER
+  EDITOR
 }
 
 model Template {
@@ -32,12 +39,6 @@ model Template {
   updatedAt   DateTime       @updatedAt
   author      User           @relation(fields: [authorId], references: [id])
   authorId    Int
-}
-
-enum Role {
-  ADMIN
-  DESIGNER
-  EDITOR
 }
 
 enum TemplateStatus {

@@ -25,7 +25,10 @@ export default function Page() {
                     className="m-5 rounded-sm border-[0.5]"
                 />
             </label>
-            <button className="rounded-sm border-[0.5] bg-black p-2 text-sm text-white">
+            <button
+                type="submit"
+                className="rounded-sm border-[0.5] bg-black p-2 text-sm text-white"
+            >
                 Sign In
             </button>
         </form>

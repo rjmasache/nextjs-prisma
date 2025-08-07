@@ -2,11 +2,14 @@ import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 import { authConfig } from "@/auth.config";
 import { signInSchema } from "@/lib/zod";
+import { PrismaAdapter } from "@auth/prisma-adapter";
+import prisma from "@/lib/prisma";
 // Your own logic for dealing with plaintext password strings; be careful!
 // import { saltAndHashPassword } from "@/utils/password";
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
     ...authConfig,
+    adapter: PrismaAdapter(prisma),
     providers: [
         Credentials({
             // You can specify which fields should be submitted, by adding keys to the `credentials` object.

@@ -1,7 +1,11 @@
 import prisma from "@/lib/prisma";
 
 export default async function Page() {
-    const users = await prisma.user.findMany();
+    const designer = await prisma.user.findMany({
+        where: {
+            email: "designer@email.com",
+        },
+    });
 
     return (
         <div className="-mt-16 flex min-h-screen flex-col items-center justify-center bg-gray-50">
@@ -9,10 +13,8 @@ export default async function Page() {
                 Superblog
             </h1>
             <ol className="list-inside list-decimal font-[family-name:var(--font-geist-sans)]">
-                {users.map((user) => (
-                    <li key={user.id} className="mb-2">
-                        {user.name}
-                    </li>
+                {designer.map((user) => (
+                    <li key={user.id}>{user.name}</li>
                 ))}
             </ol>
         </div>

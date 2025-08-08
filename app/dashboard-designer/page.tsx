@@ -3,7 +3,7 @@ import { signOut } from "@/auth";
 export default function Page() {
     return (
         <>
-            <h1>Welcome to Dashboard</h1>
+            <h1 className="text-center">Welcome to Dashboard</h1>
             <form
                 action={async () => {
                     "use server";

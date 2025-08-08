@@ -4,7 +4,7 @@ import LoginForm from "@/app/components/login-form";
 export default function Page() {
     return (
         <>
-            <div>Welcome</div>
+            <h1 className="text-center text-3xl">Welcome</h1>
             <Suspense>
                 <LoginForm />
             </Suspense>

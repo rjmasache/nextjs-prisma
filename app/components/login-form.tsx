@@ -39,7 +39,7 @@ export default function LoginForm() {
             <input type="hidden" name="redirectTo" value={callbackUrl} />
             <button
                 type="submit"
-                className="rounded-sm border-[0.5] bg-black p-2 text-sm text-white"
+                className="cursor-pointer rounded-sm border-[0.5] bg-black px-5 py-2 text-sm text-white"
                 aria-disabled={isPending}
             >
                 Sign In

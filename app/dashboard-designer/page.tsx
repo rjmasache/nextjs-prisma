@@ -3,7 +3,7 @@ import { signOut } from "@/auth";
 export default function Page() {
     return (
         <>
-            <h1>Welcome to Designer's Dashboard</h1>
+            <h1>Welcome to Dashboard</h1>
             <SignOut />
         </>
     );
